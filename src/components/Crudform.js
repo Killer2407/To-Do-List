@@ -1,4 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useReducer } from 'react'
+import { initialState, reducer, update} from './reducer';
+
+const 
 
 function Crudform(props) {
     const [input, setInput] = useState(props.edit ? props.edit.value : '');
