@@ -2,8 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-                'Lucida Sans', 'Arial' , 'Sans-Serif';
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'Arial' , 'Sans-Serif';
 }
 
 body {
@@ -15,10 +14,10 @@ body {
 .crud-app {
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
   width: 520px;
   min-height: 600px;
-  background: #63dbff;
+  background: #54f4ff;
   text-align: center;
   margin: 128px auto;
   border-radius: 10px;

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 function Crudlist() {
     const [task, setTask] = useState("");
-    const [tasklist setTaskList] = useState([]);
+    const [tasklist, setTaskList] = useState([]);
 
     const handleChange = (e) => {
         setTask(e.target.value);
@@ -43,7 +43,7 @@ function Crudlist() {
       };
     
       return (
-        <div className="todo">
+        <div className="crud">
           <input
             type="text"
             name="text"
