@@ -1,10 +1,60 @@
 import React, { useState } from 'react';
-import Crudform from './Crudform';
-import { RiCloseCircleLine } from 'react-icons/ri';
-import { TiEdit } from 'react-icons/ti';
+
+const Crud = ({ crud, remove, edit }) => {
+    const [mode, setMode] = useState("list");
+    const [text, setText] = useState(crud.text);
+    return (
+        <div className="Crud">
+            {mode === "list"
+            ? <>
+            <span className="CrudText">{crud.text}</span>
+            <button className="RemoveCrud" onClick={remove}>Remove</button>
+            <button className="EditCrud" onClick={() => setMode("edit")}>Edit</button>
+        </>
+        : <>
+            <input value={text} onChange={e => setText(e.target.value)} className="EditCrudInput" />
+            <button className="EditCrudSave" onClick={() => {edit(text); setMode("list");}}>Save</button>
+            <button className="EditCrudCancel" onClick={() => setMode("list")}>Cancel</button>
+        </>}
+        </div>
+    );
+}
+
+export default Crud;
 
 
-const Crud = ({ cruds, completeCrud, removeCrud, updateCrud }) => {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//import Crudform from './Crudform';
+//import { RiCloseCircleLine } from 'react-icons/ri';
+//import { TiEdit } from 'react-icons/ti';
+
+
+/*const Crud = ({ cruds, completeCrud, removeCrud, updateCrud }) => {
     const [edit, setEdit] = useState({
         id: null,
         value: ''
@@ -45,4 +95,4 @@ const Crud = ({ cruds, completeCrud, removeCrud, updateCrud }) => {
     ));
 };
 
-export default Crud;
+export default Crud;*/

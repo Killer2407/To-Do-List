@@ -1,5 +1,39 @@
-import React, { useState, useReducer } from 'react'
-import { initialState, reducer, update} from './reducer';
+import React, { useReducer } from 'react';
+import { initialState, reducer } from "../reducer/Reducer.js";
+import Crud from "./Crud.js";
+import Crudlist from "./Crudlist.js";
+
+const Crudform = () => {
+    const [state, dispatch] = useReducer(reducer, initialState);
+    return (<>
+        <Crudlist
+            add={text => dispatch({type: "add", text: text})}
+        />
+        {state.cruds.map(t => (
+            <Crud
+            key={t.id}
+            crud={t}
+            remove={() => dispatch({type: "remove", id: t.id})}
+            edit={text => dispatch({type: "edit", id: t.id, text: text})}
+            />
+        ))}
+    </>);
+}
+
+export default Crudform;
+
+
+
+
+
+
+
+
+
+
+
+
+/*import { initialState, reducer, update} from './reducer';
 
 const 
 
@@ -62,4 +96,4 @@ function Crudform(props) {
     );
 }
 
-export default Crudform;
+export default Crudform;*/

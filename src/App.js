@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import './App.css';
+import Crudform from "./components/Crudform.js";
 import { theme } from "./theme";
 import { ThemeContext } from "./Provider";
 import ThemeSwitch from "./ThemeSwitch";
@@ -17,13 +18,13 @@ const getStyles = (mode) => ({
   }
 });
 
-function App() {
+const App = () => {
   const { mode } = useContext(ThemeContext);
   const styles = getStyles(mode);
   return (
     <div style={styles.app}>
      <div className="crud-app">
-      <Crudlist />
+      <Crudform />
       <ThemeSwitch />
      </div>
     </div>
